@@ -1,0 +1,32 @@
+Working on MFR522 RFID Reader
+
+sudo apt-get install python-dev
+
+wget https://github.com/lthiery/SPI-Py/archive/master.zip
+
+Go to directory
+python setup.py install
+
+sudo apt-get install wvdial usb-modeswitch
+
+
+
+[Dialer Defaults]
+Init1 = ATZ
+Init2 = ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+Dial Attempts = 2
+Init4 = AT+CGDCONT=1,"IP","zonginternet"
+Password = guest
+Phone = *99#
+Modem Type = Analog Modem
+Stupid Mode = 1
+Baud = 9600
+New PPPD = yes
+Dial Command = ATD
+Modem = /dev/ttyUSB0
+ISDN = 0
+Username = guest
+Carrier Check = no
+
+
+sudo apt-get install python-dev python-mysqldb mysql-server
